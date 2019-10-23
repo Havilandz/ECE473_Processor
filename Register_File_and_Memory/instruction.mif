@@ -1,0 +1,17 @@
+DEPTH = 64;			% Memory depth and width are required     %
+WIDTH = 32;			% Enter a decimal number                  %
+ADDRESS_RADIX = HEX;		% Address and value radixes are optional  %
+DATA_RADIX = HEX;		% Enter BIN, DEC, HEX, or OCT; unless     %
+% otherwise specified, radixes = HEX      % 
+-- Specify initial data values for memory, format is address : data 
+CONTENT BEGIN
+-- Initialize data
+00  :  FACEFEED;	     %   Address : Data   %
+01  :  CAFEBABE;	
+02  :  DEADBEEF;	
+03  :  8BADF00D;	
+04  :  BAAAAAAD;	
+05  :  DEADC0DE;	
+06  :  C00010FF;	
+07  :  FEE1DEAD;	
+END;
