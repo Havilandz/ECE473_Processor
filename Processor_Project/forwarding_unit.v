@@ -1,0 +1,19 @@
+//Forwarding Controller for 5 stage mips pipeline processor
+
+
+module forwarding_unit(
+	input [4:0] EX_MEM_RD,
+	input [4:0] MEM_WB_RD,
+	input EX_MEM_RegWrite,
+	input MEM_WB_Reg_Write,
+	input [4:0] ID_EX_RS,
+	input [4:0] ID_EX_RT,
+	
+	output [1:0] FwdCtrl_2,
+	output [1:0] FwdCtrl_1
+);
+	
+
+
+
+endmodule

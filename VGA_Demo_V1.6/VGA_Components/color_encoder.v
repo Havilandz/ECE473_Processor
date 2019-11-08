@@ -14,7 +14,7 @@ module color_encoder(
 	//basic colors:
 	//Red: 	1111 0000 0000		hex: F00
 	//Green: 0000 1111 0000		hex: 0F0
-	//Blue:	0000 0000 1111 	hex: 00F
+	//Blue:	0000 0000 1111 		hex: 00F
 	//Black: 0000 0000 0000		hex: 000
 	//White: 1111 1111 1111		hex: FFF
 	parameter color_0 = 12'h000; 

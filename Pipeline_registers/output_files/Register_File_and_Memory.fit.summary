@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Oct 22 20:06:53 2019
+Fitter Status : Successful - Thu Oct 24 14:43:58 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Register_File_and_Memory
 Top-level Entity Name : Register_File_and_Memory
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 965 / 18,480 ( 5 % )
-Total registers : 747
+Logic utilization (in ALMs) : 2,046 / 18,480 ( 11 % )
+Total registers : 2363
 Total pins : 26 / 224 ( 12 % )
 Total virtual pins : 0
 Total block memory bits : 311,296 / 3,153,920 ( 10 % )

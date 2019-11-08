@@ -1,0 +1,23 @@
+/* 
+5 stage pipeline controller
+
+Zach Haviland
+This is the control module for the five stage pipeline
+project.
+
+*/
+
+module controller(
+
+
+
+
+
+);
+
+
+
+
+
+
+endmodule

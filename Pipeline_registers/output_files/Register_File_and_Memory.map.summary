@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Oct 22 20:05:32 2019
+Analysis & Synthesis Status : Successful - Thu Oct 24 14:41:14 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Register_File_and_Memory
 Top-level Entity Name : Register_File_and_Memory
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 692
+Total registers : 1882
 Total pins : 26
 Total virtual pins : 0
 Total block memory bits : 311,296

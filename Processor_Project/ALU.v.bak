@@ -1,0 +1,10 @@
+/*
+
+Five stage pipeline ALU
+
+Zach Haviland
+
+Five stage pipeline aritmetic logic unit used to execute logic
+*/
+
+module ALU
