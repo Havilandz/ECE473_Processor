@@ -13,7 +13,7 @@ module PC_register(
         if (reset == 1'b1) begin //clears register
             data_out <= -1;
         end else if (write == 1'b1) begin
-            data_out <= data_in+1'b1;
+            data_out <= data_in;
         end else begin
             data_out <= data_out;
         end

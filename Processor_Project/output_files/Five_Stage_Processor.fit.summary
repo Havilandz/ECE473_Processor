@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Nov 07 23:01:37 2019
+Fitter Status : Successful - Fri Nov 08 17:03:41 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Five_Stage_Processor
 Top-level Entity Name : Five_Stage_Processor
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 2,339 / 18,480 ( 13 % )
-Total registers : 2620
+Logic utilization (in ALMs) : 2,605 / 18,480 ( 14 % )
+Total registers : 2571
 Total pins : 19 / 224 ( 8 % )
 Total virtual pins : 0
 Total block memory bits : 311,296 / 3,153,920 ( 10 % )

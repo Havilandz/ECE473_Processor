@@ -82,7 +82,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 2'b00; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00000; //ALU adds
 			ALUsrc <= 0; //1 for I type instructions
@@ -96,7 +96,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 2'b00; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00001; //ALU subtracts
 			ALUsrc <= 0; //1 for I type instructions

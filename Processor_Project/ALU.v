@@ -8,8 +8,8 @@ Five stage pipeline aritmetic logic unit used to execute logic
 */
 
 module ALU(
-	input wire[31:0] arg1, //RS
-	input wire[31:0] arg2, //RD or RT depending on the instruction
+	input wire [31:0] arg1, //RS
+	input wire [31:0]  arg2, //RD or RT depending on the instruction
 	input wire[4:0] ALU_op,
 	input wire[4:0] shamt, 
 	
@@ -23,7 +23,7 @@ module ALU(
 
 
 
-
+	reg signed[31:0] temp;
 
 	/*
 	ALU opcode table
@@ -109,7 +109,7 @@ module ALU(
 	
 	task sll();
 		begin
-			result <= arg2<<shamt;//shifted by shamt might need to make them the same width...
+			result <= arg2<<shamt;
 			if(result ==0) begin
 				zero<=1;
 			end else begin
@@ -120,7 +120,7 @@ module ALU(
 	
 	task srl();
 		begin
-			result <= arg2>>shamt;//shifted by shamt might need to make them the same width...
+			result <= arg2>>shamt;
 			if(result ==0) begin
 				zero<=1;
 			end else begin
@@ -131,7 +131,8 @@ module ALU(
 	
 	task sra();
 		begin
-			result <= arg2>>>shamt;//shifted by shamt might need to make them the same width...
+			temp <= arg2;
+			result <= temp>>>shamt;
 			if(result ==0) begin
 				zero<=1;
 			end else begin

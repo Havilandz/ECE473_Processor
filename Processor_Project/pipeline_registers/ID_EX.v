@@ -28,6 +28,8 @@ module ID_EX(
     output reg [31:0] data_out_1,
 	input wire [31:0] data_in_2,
     output reg [31:0] data_out_2,
+	input wire [4:0] RS_in,
+	output reg [4:0] RS_out,
 	input wire [4:0] RD_in,
     output reg [4:0] RD_out,
 	input wire [4:0] RT_in, 
@@ -56,6 +58,7 @@ module ID_EX(
 			//clear data
             data_out_1 <= 32'h0;
 			data_out_2 <= 32'h0;
+			RS_out <= 0;
 			RD_out <= 5'h0;
 			RT_out <= 5'h0;
 			shamt_out <= 0;
@@ -71,6 +74,7 @@ module ID_EX(
 		
             data_out_1 <= data_in_1;
 			data_out_2 <= data_in_2;
+			RS_out <= RS_in;
 			RD_out <= RD_in;
 			RT_out <= RT_in;
 			shamt_out <= shamt_in;
@@ -88,6 +92,7 @@ module ID_EX(
 			
             data_out_1 <= data_out_1;
 			data_out_2 <= data_out_2;
+			RS_out <= RS_out;
 			RD_out <= RD_out;
 			RT_out <= RT_out;
 			shamt_out <= shamt_out;
