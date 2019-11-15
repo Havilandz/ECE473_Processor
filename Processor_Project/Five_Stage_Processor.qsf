@@ -297,4 +297,7 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE simulations/verification_1_Test
 set_global_assignment -name VERILOG_FILE forwarding_unit.v
 set_global_assignment -name VERILOG_FILE PC_add.v
 set_global_assignment -name QIP_FILE misc_muxes/forawrding_mux.qip
+set_global_assignment -name VERILOG_FILE sign_extend.v
+set_global_assignment -name QIP_FILE misc_muxes/branch_mux.qip
+set_global_assignment -name VERILOG_FILE branch_add.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -36,7 +36,10 @@ module ID_EX(
 	output reg [4:0] RT_out,
 	input wire [4:0] shamt_in,
 	output reg [4:0] shamt_out,
-	
+	input wire [31:0] immidiate_in,
+	output reg [31:0] immidiate_out,
+	input wire [31:0] PC_in,
+	output reg [31:0] PC_out,
 	
 	//register controll
     input wire reset,
@@ -62,6 +65,8 @@ module ID_EX(
 			RD_out <= 5'h0;
 			RT_out <= 5'h0;
 			shamt_out <= 0;
+			immidiate_out<=0;
+			PC_out<=0;
         end else if (write == 1'b1) begin
 			RegWrite_out <=RegWrite_in;
 			MemtoReg_out <=MemtoReg_in;
@@ -78,6 +83,8 @@ module ID_EX(
 			RD_out <= RD_in;
 			RT_out <= RT_in;
 			shamt_out <= shamt_in;
+			immidiate_out<=immidiate_in;
+			PC_out<=PC_in;
         end else begin
 		
 			RegWrite_out <=RegWrite_out;
@@ -96,6 +103,8 @@ module ID_EX(
 			RD_out <= RD_out;
 			RT_out <= RT_out;
 			shamt_out <= shamt_out;
+			immidiate_out<=immidiate_out;
+			PC_out<=PC_out;
         end
     end
 

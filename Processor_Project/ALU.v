@@ -9,7 +9,7 @@ Five stage pipeline aritmetic logic unit used to execute logic
 
 module ALU(
 	input wire [31:0] arg1, //RS
-	input wire [31:0]  arg2, //RD or RT depending on the instruction
+	input wire [31:0]  arg2, //RD or RT or immediate value depending on the instruction
 	input wire[4:0] ALU_op,
 	input wire[4:0] shamt, 
 	
@@ -36,108 +36,39 @@ module ALU(
 	srl : 00110
 	sra : 00111
 	slt : 01000
+	lui : 01001
+	bne : 01010
+	bgtz: 01011
+	bgez: 01100
 	*/
 	always @(*) begin
 		case(ALU_op)
-			5'b00000 : result <= arg1+arg2;//add(arg1, arg2, result); 
-			5'b00001 : sub();
-			5'b00010 : instr_and();
-			5'b00011 : instr_or();
-			5'b00100 : instr_nor();
-			5'b00101 : sll();
-			5'b00110 : srl();
+			5'b00000 : result <= arg1+arg2;//add; 
+			5'b00001 : result <= arg1-arg2; //sub
+			5'b00010 : result <= arg1&arg2; //and
+			5'b00011 : result <= (arg1|arg2); //or
+			5'b00100 : result <= ~(arg1|arg2); //nor
+			5'b00101 : result <= arg2<<shamt; //sll
+			5'b00110 : result <= arg2>>shamt; //srl
 			5'b00111 : sra();
 			5'b01000 : slt();
+			5'b01001 : result <= arg2<<16; //lui()
+			5'b01010 : result <= (arg1 != arg2) ? 0:1;//bne
+			5'b01011 : result <= (arg1 > 0) ? 0:1;//bgtz
+			5'b01100 : result <= (arg1 >= 0) ? 0:1;//bgez
 		endcase
+		if(result == 0) begin
+				zero<=1;
+		end else begin
+				zero <= 0;
+		end	
 	end
 
-	task add();
-		begin
-			result <= arg1 + arg2;
-			if(result == 0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-	
-	task sub();
-		begin
-			result <= arg1- arg2;
-			if(result == 0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-
-	task instr_and();
-		begin
-			result <= arg1&arg2;
-			if(result ==0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-
-	task instr_or();
-		begin
-			result <= arg1|arg2;
-			if(result == 0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-	
-	task instr_nor();
-		begin
-			result <= ~(arg1|arg2);
-			
-			if(result ==0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-	
-	task sll();
-		begin
-			result <= arg2<<shamt;
-			if(result ==0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
-	
-	task srl();
-		begin
-			result <= arg2>>shamt;
-			if(result ==0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
-		end
-	endtask
 	
 	task sra();
 		begin
 			temp <= arg2;
-			result <= temp>>>shamt;
-			if(result ==0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
+			result <= temp>>>shamt;	
 		end
 	endtask
 
@@ -147,12 +78,8 @@ module ALU(
 				result <= 1;
 			end else begin
 				result <= 0;
-			end
-			if(result == 0) begin
-				zero<=1;
-			end else begin
-				zero <= 0;
-			end		
+			end	
 		end
 	endtask
+	
 endmodule
