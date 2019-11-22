@@ -1,0 +1,10 @@
+
+
+module thiry_one(
+output reg [31:0] thirty_one
+);
+	
+	always @(*) begin
+		thirty_one <= (32'h0 | 31);
+	
+endmodule

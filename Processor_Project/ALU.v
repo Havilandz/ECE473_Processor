@@ -74,7 +74,7 @@ module ALU(
 
 	task slt();
 		begin
-			if(arg1 > arg2) begin
+			if(arg1 < arg2) begin //note: this was arg1 > arg2 when I ran the R type tests and it passed so there might be a problem in the future
 				result <= 1;
 			end else begin
 				result <= 0;

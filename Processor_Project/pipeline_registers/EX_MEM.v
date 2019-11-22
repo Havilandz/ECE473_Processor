@@ -9,10 +9,10 @@ module EX_MEM(
 	//Memory control
 	input wire MemRead_in,
 	input wire MemWrite_in,
-	input wire [1:0]PCsrc_in,
+	input wire [3:0]PCsrc_in,
 	output reg MemRead_out,
 	output reg MemWrite_out,
-	output reg [1:0]PCsrc_out,
+	output reg [3:0]PCsrc_out,
 
 	
 	

@@ -10,7 +10,7 @@ DATA_RADIX = HEX;			% Enter BIN, DEC, HEX, or OCT; unless     %
 CONTENT BEGIN
 [00..3F]	: 00000000;	% Range - Every address from 00 to 3F = 00000000 %
 -- Initialize data
-00 : 3402003f;
+00 : 3402003f; 
 01 : 340100ff;
 02 : 30420014;
 03 : 34420015;

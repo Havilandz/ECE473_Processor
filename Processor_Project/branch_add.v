@@ -6,9 +6,9 @@ module branch_add(
 	output reg[31:0] result
 );
 
-
+//doens't bitshift because we are word addressable
 always @* begin
-	result <=  arg_1 + (arg_2<<2);
+	result <=  arg_1 + (arg_2);
 
 end
 

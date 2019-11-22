@@ -68,8 +68,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 208 96)
 		(output)
-		(text "PCsrc[1..0]" (rect 0 0 44 12)(font "Arial" ))
-		(text "PCsrc[1..0]" (rect 143 91 187 103)(font "Arial" ))
+		(text "PCsrc[3..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "PCsrc[3..0]" (rect 141 91 187 103)(font "Arial" ))
 		(line (pt 208 96)(pt 192 96)(line_width 3))
 	)
 	(port

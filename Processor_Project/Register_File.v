@@ -19,10 +19,25 @@ module Register_File (
 		for (i = 0; i<32; i = i+1) begin
 			register[i] = 0;
 		end
+//		register[1] <= -30;
+//		register[2] = 56;
 		
 	end
 		
-	always @ (posedge clock) begin
+//	always @ (posedge clock) begin
+//		if (reset == 1'b1) begin 
+//            for (i = 0; i<32; i = i+1) begin
+//				register[i] <= 0;
+//			end
+//        end else if (WriteEnable == 1'b1) begin
+//            register[write_address] <= data_in;
+//        end
+//	
+//	end
+	
+	
+	always @ (negedge clock) begin
+		//write to reg file
 		if (reset == 1'b1) begin 
             for (i = 0; i<32; i = i+1) begin
 				register[i] <= 0;
@@ -30,11 +45,7 @@ module Register_File (
         end else if (WriteEnable == 1'b1) begin
             register[write_address] <= data_in;
         end
-	
-	end
-	
-	
-	always @ (negedge clock) begin
+		//read from reg file
 		RS_data <= register[RS_addr];
 		RT_data <= register[RT_addr];
 	end

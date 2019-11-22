@@ -9,10 +9,10 @@ module ID_EX(
 	//Memory control
 	input wire MemRead_in,
 	input wire MemWrite_in,
-	input wire [1:0]PCsrc_in,
+	input wire [3:0]PCsrc_in,
 	output reg MemRead_out,
 	output reg MemWrite_out,
-	output reg [1:0]PCsrc_out,
+	output reg [3:0]PCsrc_out,
 	//Ex control
 	input wire RegDst_in,
 	input wire [4:0] ALUop_in,
@@ -40,6 +40,8 @@ module ID_EX(
 	output reg [31:0] immidiate_out,
 	input wire [31:0] PC_in,
 	output reg [31:0] PC_out,
+	input wire [25:0] J_addr_in,
+	output reg [31:0] J_addr_out,
 	
 	//register controll
     input wire reset,
@@ -67,6 +69,7 @@ module ID_EX(
 			shamt_out <= 0;
 			immidiate_out<=0;
 			PC_out<=0;
+			J_addr_out<=0;
         end else if (write == 1'b1) begin
 			RegWrite_out <=RegWrite_in;
 			MemtoReg_out <=MemtoReg_in;
@@ -85,6 +88,7 @@ module ID_EX(
 			shamt_out <= shamt_in;
 			immidiate_out<=immidiate_in;
 			PC_out<=PC_in;
+			J_addr_out<=(J_addr_in | 32'h0);
         end else begin
 		
 			RegWrite_out <=RegWrite_out;
@@ -105,6 +109,7 @@ module ID_EX(
 			shamt_out <= shamt_out;
 			immidiate_out<=immidiate_out;
 			PC_out<=PC_out;
+			J_addr_out<=J_addr_out;
         end
     end
 

@@ -15,7 +15,7 @@ module controller(//need to specify how big these are
 	output reg MemtoReg,
 	output reg MemRead,
 	output reg MemWrite,
-	output reg[1:0] PCsrc, 
+	output reg[3:0] PCsrc, 
 	output reg RegDst,
 	output reg[4:0] ALUop,
 	output reg ALUsrc
@@ -39,6 +39,8 @@ module controller(//need to specify how big these are
 			6'b100011 : lw();
 			6'b101011 : sw();
 			6'b001111 : lui();
+			6'b000010 : j();
+			6'b000011 : jal();
 		
 		endcase	
 	end
@@ -97,7 +99,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00000; //ALU adds
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -111,7 +113,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00001; //ALU subtracts
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -125,7 +127,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00010; 
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -138,7 +140,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00011; //ALU ors
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -151,7 +153,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00100;
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -164,7 +166,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01000; 
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -177,7 +179,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00101;
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -190,7 +192,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00110;
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -203,7 +205,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 0; //0 for RD to be destination 1 for RT.  for I type instructions
 			ALUop <= 5'b00111;
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -216,9 +218,9 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0;
 			MemRead <= 0;
 			MemWrite <= 0;
-			PCsrc <= 2'b01;
+			PCsrc <= 4'b0001;
 			RegDst <= 0;
-			ALUop <= 2'b00101;
+			ALUop <= 4'b0000101;
 			ALUsrc <= 0;
 		end
 	endtask
@@ -247,7 +249,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00010; 
 			ALUsrc <= 1; //1 for I type instructions, except branches	
@@ -259,7 +261,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00011; //ALU alu or
 			ALUsrc <= 1; //1 for I type instructions, except branches
@@ -271,7 +273,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; //PCsrc?
+			PCsrc <= 4'b0000; //PCsrc?
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01000; //alu slts
 			ALUsrc <= 1; //1 for I type instructions, except branches
@@ -283,7 +285,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00000; //ALU adds
 			ALUsrc <= 1; //1 for I type instructions, except branches
@@ -295,7 +297,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b10; //10 for branch
+			PCsrc <= 4'b0010; //10 for branch
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00001; //ALU sub
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -306,6 +308,7 @@ module controller(//need to specify how big these are
 	bne : 01010
 	bgtz: 01011
 	bgez: 01100
+	jal : 01101 
 	*/
 	task bne();
 		begin
@@ -313,31 +316,31 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b10; //10 for branch
+			PCsrc <= 4'b0010; //10 for branch
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01010; //ALU bne
 			ALUsrc <= 0; //1 for I type instructions, except branches
 		end
 	endtask
-	task bgtz();
+	task bgtz(); //not tested
 		begin
 			RegWrite <= 0; //write to register file
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b10; //10 for branch
+			PCsrc <= 4'b0010; //10 for branch
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01011; //ALU bgtz
 			ALUsrc <= 0; //1 for I type instructions, except branches
 		end
 	endtask
-	task bgez();
+	task bgez(); //not tested
 		begin
 			RegWrite <= 0; //write to register file
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b10; //10 for branch
+			PCsrc <= 4'b0010; //10 for branch
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01100; //ALU bgez
 			ALUsrc <= 0; //1 for I type instructions, except branches
@@ -349,7 +352,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 1; //write from data memory
 			MemRead <= 1; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00000; //ALU adds
 			ALUsrc <= 1; //1 for I type instructions, except branches
@@ -361,7 +364,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 1; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00000; //ALU adds
 			ALUsrc <= 1; //1 for I type instructions, except branches
@@ -373,13 +376,38 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 2'b00; 
+			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b01001; //ALU lui
 			ALUsrc <= 1; //1 for I type instructions, except branches
 		end
 	endtask
-
+	
+		task j();
+		begin
+			RegWrite <= 0; //write to register file
+			MemtoReg <= 0; //write from data memory
+			MemRead <= 0; //read data memory
+			MemWrite <= 0; //write to data memory
+			PCsrc <= 4'b0101; 
+			RegDst <= 0; //0 for RD to be destination 1 for RT
+			ALUop <= 5'b00101; //sll
+			ALUsrc <=0; //1 for I type instructions, except branches
+		end
+	endtask
+	
+		task jal();
+		begin
+			RegWrite <= 1; //write to register file
+			MemtoReg <= 0; //write from data memory
+			MemRead <= 0; //read data memory
+			MemWrite <= 0; //write to data memory
+			PCsrc <= 4'b1101; 
+			RegDst <= 0; //0 for RD to be destination 1 for RT
+			ALUop <= 5'b00101; //sll 
+			ALUsrc <= 0; //1 for I type instructions, except branches
+		end
+	endtask
 	
 	
 endmodule
