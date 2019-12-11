@@ -2,7 +2,7 @@ DEPTH = 64;
 WIDTH = 32;
 ADDRESS_RADIX = HEX;
 DATA_RADIX = HEX;
-
+%row 5 before changes 21080004%
 -- Specify initial data values for memory, format is address : data
 CONTENT BEGIN
 [00..3F] : 00000000;
@@ -13,11 +13,13 @@ CONTENT BEGIN
 02 : 00008020;
 03 : 8d0a0000;
 04 : 020a8020;
-05 : 21080004;
+05 : 21080001;
 06 : 1540fffc;
 07 : 00000000;
-08 : 1000ffff;
-[9..3F] : 00000000;
+08 : 00000000;
+09 : 00000000;
+0A : 1000ffff;
+[0B..3F] : 00000000;
 END;
 
 

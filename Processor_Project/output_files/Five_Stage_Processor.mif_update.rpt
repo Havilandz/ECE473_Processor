@@ -1,0 +1,97 @@
+MIF/HEX Update report for Five_Stage_Processor
+Wed Dec 11 14:27:06 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. MIF/HEX Update Summary
+  3. MIF/HEX Update Processed Files
+  4. MIF/HEX Update Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Wed Dec 11 14:27:06 2019 ;
+; Revision Name         ; Five_Stage_Processor                  ;
+; Top-level Entity Name ; Five_Stage_Processor                  ;
+; Family                ; Cyclone V                             ;
+; Device                ; 5CEBA4F23C7                           ;
++-----------------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                                                                                         ;
++----------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                              ;
++----------------------------------------------------------------------------------------------------------------------------------------+
+; D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/Milestone-3/test_3/m3_test3_sum_Code.mif ;
+; D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/milestone-3/test_3/m3_test3_sum_data.mif ;
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------+
+; MIF/HEX Update Messages ;
++-------------------------+
+Warning (125092): Tcl Script File misc_muxes/two_mux_addr.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE misc_muxes/two_mux_addr.qip
+Info: *******************************************************************
+Info: Running Quartus Prime MIF/HEX Update
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Dec 11 14:26:57 2019
+Info: Command: quartus_cdb Five_Stage_Processor -c Five_Stage_Processor --update_mif
+Warning (113031): 64 out of 64 addresses are reinitialized. The latest initialized data will replace the existing data. There are 64 warnings found, and 10 warnings are reported. File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/Milestone-3/test_3/m3_test3_sum_Code.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 11
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 12
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 13
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 14
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 15
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 16
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 17
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 18
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 19
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 20
+Warning (113031): 64 out of 64 addresses are reinitialized. The latest initialized data will replace the existing data. There are 64 warnings found, and 10 warnings are reported. File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/milestone-3/test_3/m3_test3_sum_data.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 11
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 12
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 13
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 14
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 15
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 16
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 17
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 18
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 19
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/ Line: 20
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/Milestone-3/test_3/m3_test3_sum_Code.mif File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/Milestone-3/test_3/m3_test3_sum_Code.mif Line: 0
+    Info (39025): Processed Memory Initialization File D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/milestone-3/test_3/m3_test3_sum_data.mif File: D:/Zach/Documents/College_BS/ECE473_Arch_Org/ECE473_Processor/Processor_Project/test_programs/milestone-3/test_3/m3_test3_sum_data.mif Line: 0
+Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Wed Dec 11 14:27:06 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
+
+
