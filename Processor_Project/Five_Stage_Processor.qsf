@@ -261,6 +261,11 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV -sectio
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_CV -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_CV -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE branch_forward_unit.v
+set_global_assignment -name VERILOG_FILE Branch_Control.v
 set_global_assignment -name VERILOG_FILE pipeline_registers/IF_ID.v
 set_global_assignment -name VERILOG_FILE pipeline_registers/ID_EX.v
 set_global_assignment -name VERILOG_FILE pipeline_registers/EX_MEM.v
@@ -289,9 +294,6 @@ set_global_assignment -name VERILOG_FILE ALU.v
 set_global_assignment -name VERILOG_FILE pipeline_registers/MEM_WB.v
 set_global_assignment -name VERILOG_FILE misc_muxes/two_mux_addr.v
 set_global_assignment -name QIP_FILE misc_muxes/two_mux_addr.qip
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name QIP_FILE misc_muxes/RegDst_mux.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE simulations/verification_1_Test.vwf
 set_global_assignment -name VERILOG_FILE forwarding_unit.v
@@ -301,4 +303,6 @@ set_global_assignment -name VERILOG_FILE sign_extend.v
 set_global_assignment -name QIP_FILE misc_muxes/branch_mux.qip
 set_global_assignment -name VERILOG_FILE branch_add.v
 set_global_assignment -name VERILOG_FILE thirty_one.v
+set_global_assignment -name QIP_FILE misc_muxes/PC_mux.qip
+set_global_assignment -name QIP_FILE misc_muxes/branch_fwd_mux.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -9,10 +9,11 @@ module forwarding_unit(
 	input wire [4:0] ID_EX_RS,
 	input wire [4:0] ID_EX_RT,
 	input wire [4:0] RS_ADDR,
+	input wire [4:0] RT_ADDR,
 	
 	output reg [1:0] FwdCtrl_1,
 	output reg [1:0] FwdCtrl_2,
-	output reg  FwdCtrl_3,
+	output reg [1:0] FwdCtrl_3,
 	output reg [1:0] FwdCtrl_4 
 );
 
@@ -55,15 +56,20 @@ module forwarding_unit(
 			FwdCtrl_2 <= 2'b00;
 		end
 	end	
-	
+	//forwards to decode stage
 	always @(*) begin
 		if((MEM_WB_RD == RS_ADDR) && (MEM_WB_RegWrite == 1)) begin
-			FwdCtrl_3 <= 1;
-		end else begin
-			FwdCtrl_3 <= 0;
+			FwdCtrl_3 <= 2'b01;
+		end
+		else if((MEM_WB_RD == RT_ADDR) && (MEM_WB_RegWrite == 1)) begin
+			FwdCtrl_3 <= 2'b10;
+		end
+		else begin
+			FwdCtrl_3 <= 2'b00;
 		end
 	end
 	
+	//forwards data from RAM back to ram, more or less
 	always @(*) begin
 		if((EX_MEM_RD == ID_EX_RT) && (EX_MEM_RegWrite == 1)) begin 
 			FwdCtrl_4 <= 2'b01;

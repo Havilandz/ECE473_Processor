@@ -40,9 +40,12 @@ module ALU(
 	bne : 01010
 	bgtz: 01011
 	bgez: 01100
+	beq : 01101
+	mem_add: 01110
 	*/
 	always @(*) begin
 		case(ALU_op)
+			default  : result <= 0;
 			5'b00000 : result <= arg1+arg2;//add; 
 			5'b00001 : result <= arg1-arg2; //sub
 			5'b00010 : result <= arg1&arg2; //and
@@ -53,9 +56,8 @@ module ALU(
 			5'b00111 : sra();
 			5'b01000 : slt();
 			5'b01001 : result <= arg2<<16; //lui()
-			5'b01010 : result <= (arg1 != arg2) ? 0:1;//bne
-			5'b01011 : result <= (arg1 > 0) ? 0:1;//bgtz
-			5'b01100 : result <= (arg1 >= 0) ? 0:1;//bgez
+			5'b01110 : result <= (arg1+arg2)/4;//sw/lw
+			
 		endcase
 		if(result == 0) begin
 				zero<=1;

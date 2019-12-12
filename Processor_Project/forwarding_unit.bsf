@@ -73,6 +73,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "RT_ADDR[4..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "RT_ADDR[4..0]" (rect 21 139 92 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "FwdCtrl_1[1..0]" (rect 0 0 59 12)(font "Arial" ))
@@ -89,9 +96,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 256 64)
 		(output)
-		(text "FwdCtrl_3" (rect 0 0 41 12)(font "Arial" ))
-		(text "FwdCtrl_3" (rect 194 59 235 71)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64)(line_width 1))
+		(text "FwdCtrl_3[1..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "FwdCtrl_3[1..0]" (rect 175 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
 	)
 	(port
 		(pt 256 80)

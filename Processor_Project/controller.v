@@ -90,6 +90,8 @@ module controller(//need to specify how big these are
 	bne : 01010
 	bgtz: 01011
 	bgez: 01100
+	beq : 01101
+	mem_add: 01110
 	*/
 	
 	//Add instruction
@@ -299,7 +301,7 @@ module controller(//need to specify how big these are
 			MemWrite <= 0; //write to data memory
 			PCsrc <= 4'b0010; //10 for branch
 			RegDst <= 0; //0 for RD to be destination 1 for RT
-			ALUop <= 5'b00001; //ALU sub
+			ALUop <= 5'b01101; //ALU beq
 			ALUsrc <= 0; //1 for I type instructions, except branches
 		end
 	endtask
@@ -308,7 +310,7 @@ module controller(//need to specify how big these are
 	bne : 01010
 	bgtz: 01011
 	bgez: 01100
-	jal : 01101 
+	beq : 01101 
 	*/
 	task bne();
 		begin
@@ -354,7 +356,7 @@ module controller(//need to specify how big these are
 			MemWrite <= 0; //write to data memory
 			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
-			ALUop <= 5'b00000; //ALU adds
+			ALUop <= 5'b01110; //ALU adds for sw/lw
 			ALUsrc <= 1; //1 for I type instructions, except branches
 		end
 	endtask
@@ -366,7 +368,7 @@ module controller(//need to specify how big these are
 			MemWrite <= 1; //write to data memory
 			PCsrc <= 4'b0000; 
 			RegDst <= 1; //0 for RD to be destination 1 for RT
-			ALUop <= 5'b00000; //ALU adds
+			ALUop <= 5'b01110; //ALU adds for sw/lw
 			ALUsrc <= 1; //1 for I type instructions, except branches
 		end
 	endtask
@@ -389,7 +391,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 4'b0101; 
+			PCsrc <= 4'b0011; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00101; //sll
 			ALUsrc <=0; //1 for I type instructions, except branches
@@ -402,7 +404,7 @@ module controller(//need to specify how big these are
 			MemtoReg <= 0; //write from data memory
 			MemRead <= 0; //read data memory
 			MemWrite <= 0; //write to data memory
-			PCsrc <= 4'b1101; 
+			PCsrc <= 4'b0111; 
 			RegDst <= 0; //0 for RD to be destination 1 for RT
 			ALUop <= 5'b00101; //sll 
 			ALUsrc <= 0; //1 for I type instructions, except branches
