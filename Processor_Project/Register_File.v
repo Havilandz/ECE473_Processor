@@ -19,8 +19,7 @@ module Register_File (
 		for (i = 0; i<32; i = i+1) begin
 			register[i] = 0;
 		end
-//		register[1] <= -30;
-//		register[2] = 56;
+		register[29] <=8'hFC;
 		
 	end
 		

@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Dec 12 10:43:38 2019
+Analysis & Synthesis Status : Successful - Thu Dec 12 17:19:30 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Five_Stage_Processor
 Top-level Entity Name : Five_Stage_Processor
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1132
+Total registers : 1336
 Total pins : 19
 Total virtual pins : 0
-Total block memory bits : 314,368
+Total block memory bits : 313,792
 Total DSP Blocks : 1
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

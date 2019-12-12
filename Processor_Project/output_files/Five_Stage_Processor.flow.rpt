@@ -1,5 +1,5 @@
 Flow report for Five_Stage_Processor
-Thu Dec 12 10:55:27 2019
+Thu Dec 12 17:24:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Dec 12 10:49:55 2019       ;
+; Flow Status                     ; Successful - Thu Dec 12 17:24:06 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Five_Stage_Processor                        ;
 ; Top-level Entity Name           ; Five_Stage_Processor                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,850 / 18,480 ( 10 % )                     ;
-; Total registers                 ; 1222                                        ;
+; Logic utilization (in ALMs)     ; 2,080 / 18,480 ( 11 % )                     ;
+; Total registers                 ; 1508                                        ;
 ; Total pins                      ; 19 / 224 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 314,368 / 3,153,920 ( 10 % )                ;
+; Total block memory bits         ; 313,792 / 3,153,920 ( 10 % )                ;
 ; Total DSP Blocks                ; 1 / 66 ( 2 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 12/12/2019 10:42:57  ;
+; Start date & time ; 12/12/2019 17:18:53  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; Five_Stage_Processor ;
 +-------------------+----------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 35490513904957.157616537705280         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 35490513904957.157618913311272         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; two_mux.bsf                            ; --            ; --          ; --         ;
@@ -118,11 +118,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:41     ; 1.0                     ; 4946 MB             ; 00:01:05                           ;
-; Fitter               ; 00:06:04     ; 1.1                     ; 6451 MB             ; 00:09:58                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4857 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:05:31     ; 1.1                     ; 5176 MB             ; 00:00:44                           ;
-; Total                ; 00:12:23     ; --                      ; --                  ; 00:11:54                           ;
+; Analysis & Synthesis ; 00:00:37     ; 1.0                     ; 4947 MB             ; 00:00:58                           ;
+; Fitter               ; 00:04:23     ; 1.1                     ; 6442 MB             ; 00:08:08                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4859 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:31     ; 1.6                     ; 5181 MB             ; 00:00:48                           ;
+; Total                ; 00:05:39     ; --                      ; --                  ; 00:10:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
